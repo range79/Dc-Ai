@@ -1,0 +1,29 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '2.1.20'
+}
+
+group = 'com.range'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'io.github.cdimascio:dotenv-kotlin:6.5.1'
+    implementation("net.dv8tion:JDA:5.6.1")
+    //logback
+    implementation("ch.qos.logback:logback-classic:1.5.18")
+
+    //openai library
+    implementation "com.aallam.openai:openai-client:4.0.1"
+    //tests
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+}
+
+test {
+    useJUnitPlatform()
+}
+kotlin {
+    jvmToolchain(23)
+}
