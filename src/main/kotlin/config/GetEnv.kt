@@ -13,7 +13,9 @@ class GetEnv {
             return env.get("MESSAGE_CHANNEL")
 
         }
-
+        fun getGptModel():String{
+            return env.get("GPT_MODEL")
+        }
         fun getGptToken():String{
             return env.get("GPT_TOKEN")
         }

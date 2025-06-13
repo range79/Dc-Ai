@@ -15,8 +15,14 @@ dependencies {
     //logback
     implementation("ch.qos.logback:logback-classic:1.5.18")
 
-    //openai library
-    implementation "com.aallam.openai:openai-client:4.0.1"
+
+        // import Kotlin API client BOM
+        implementation platform('com.aallam.openai:openai-client-bom:4.0.1')
+
+        // define dependencies without versions
+        implementation 'com.aallam.openai:openai-client'
+        runtimeOnly 'io.ktor:ktor-client-okhttp'
+
     //tests
     testImplementation 'org.jetbrains.kotlin:kotlin-test'
 }
@@ -25,5 +31,5 @@ test {
     useJUnitPlatform()
 }
 kotlin {
-    jvmToolchain(23)
+   8
 }
